@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css?family=Cinzel|Marck+Script');
+
+.section-houses {
+    width: 100%;
+    /* height: 150vh; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    /* background-color: #354659; */
+    background-color: #350E0E; 
+
+}
+
+.q-wrapper {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-content: center;
+    text-align: center;
+    
+}
+
+.questions {
+    font-family: 'Cinzel', serif;
+    color: #E8E8EA;
+    width: 500px;
+    align-self: center;
+    padding-bottom: 20px;
+}
+
+.name-input {
+    font-family: 'Marck Script', cursive;
+    color: black;
+    width: 300px;
+    font-size: 1.5rem;
+    align-self: center;
+    text-align: center;
+    background-image: url('https://images-na.ssl-images-amazon.com/images/I/41GxEBcDmfL._SY355_.jpg');
+    margin-bottom: 40px;
+}
+
+.sort-button {
+    background-color: #350E0E;
+    margin-bottom: 30px;
+}
+
+.houses-wrapper {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 50px;
+}
+
+.house {
+    width: 50%;
+}
+
+.house img {
+    height: 100px;
+}
+
+.header-house {
+    height: 40px;
+    width: 100%;
+    font-family: 'Cinzel', serif;
+    color: #E8E8EA;
+    /* 'Marck Script', cursive; */
+}
+
+.studentList {
+    font-family: 'Marck Script', cursive;
+    color: #E8E8EA;
+    text-align: center;
+    list-style-type: none;
+    padding: 0;
+}
+
+.studentList li {
+    width: 100%;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
