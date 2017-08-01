@@ -115,16 +115,16 @@ class Houses extends Component {
                 break;
         }
 
-        if (sum / 4 < 10.5){
+        if (sum / 4 <= 5 ){
             this.state.gryffindor.push(this.state.currentStudent);
             this.setState({gryffindor: this.state.gryffindor});
-        } else if (sum / 4 > 10.5 && sum / 4 < 20.5) {
+        } else if (sum / 4 > 5 && sum / 4 <= 18) {
             this.state.slytherin.push(this.state.currentStudent);
             this.setState({slytherin: this.state.slytherin});
-        } else if (sum / 4 > 20.5 && sum / 4 < 30.5) {
+        } else if (sum / 4 > 18 && sum / 4 <= 22) {
             this.state.hufflepuff.push(this.state.currentStudent);
             this.setState({hufflepuff: this.state.hufflepuff});
-        } else if (sum / 4 > 30.5) {
+        } else if (sum / 4 > 22) {
             this.state.ravenclaw.push(this.state.currentStudent);
             this.setState({ravenclaw: this.state.ravenclaw});
         }
