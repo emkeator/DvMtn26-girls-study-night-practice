@@ -45,92 +45,121 @@ class Houses extends Component {
         //10 slyth (10.5-20.5, excl)
         //20 huff (20.5-30.5, excl)
         //30 raven (30.5 and up)
-        var sum = 0;
+        var strAns = '';
+
+        console.log(this.state.q1);
+        console.log(this.state.q2);
+        console.log(this.state.q3);
+        console.log(this.state.q4);
+        
         switch (this.state.q1) {
             case 'winter':
-                sum += 10;
+                strAns += 's';
                 break;
             case 'spring':
-                sum += 20;
+                strAns += 'h';
                 break;
             case 'summer':
-                sum += 0;
+                strAns += 'g';
                 break;
             case 'fall':
-                sum += 30;
+                strAns += 'rr';
                 break;
             default:
-                sum += (Math.random()*40);
+                strAns += 'r';
                 break;
         }
         switch (this.state.q2) {
             case 'dragon':
-                sum += 10;
+                strAns += 's';
                 break;
             case 'unicorn':
-                sum += 20;
+                strAns += 'h';
                 break;
             case 'sphinx':
-                sum += 0;
+                strAns += 'gg';
                 break;
             case 'phoenix':
-                sum += 30;
+                strAns += 'r';
                 break;
             default:
-                sum += (Math.random()*40);
+                strAns += 'g';
                 break;
         }
         switch (this.state.q3) {
             case 'imperius curse':
-                sum += 10;
+                strAns += 'ss';
                 break;
             case 'protego':
-                sum += 20;
+                strAns += 'h';
                 break;
             case 'stupefy':
-                sum += 0;
+                strAns += 'g';
                 break;
             case 'expelliarmus':
-                sum += 30;
+                strAns += 'r';
                 break;
             default:
-                sum += (Math.random()*40);
+                strAns += 's';
                 break;
         }
         switch (this.state.q4) {
             case 'forest':
-                sum += 10;
+                strAns += 's';
                 break;
             case 'kitchens':
-                sum += 20;
+                strAns += 'hh';
                 break;
             case 'room of requirement':
-                sum += 0;
+                strAns += 'g';
                 break;
             case 'library':
-                sum += 30;
+                strAns += 'r';
                 break;
             default:
-                sum += (Math.random()*40);
+                strAns += 'h';
                 break;
         }
-
-        // console.log(sum);
-        if (sum / 4 <= 7 ){
+        
+        function letterMost(str) {
+            let counts = {g: 0, s: 0, h: 0, r: 0};
+            for (let i = 0; i < str.length; i++) {
+                if(str[i] === 'g') {
+                    counts.g += 1;
+                } else if(str[i] === 's') {
+                    counts.s += 1;
+                } else if(str[i] === 'h') {
+                    counts.h += 1;
+                } else if(str[i] === 'r') {
+                    counts.r += 1;
+                }
+            }
+            let max = 'g';
+            for (let prop in counts) {
+                if (counts[prop] > counts[max]){
+                    max = prop;
+                }
+            }
+            return max;
+        }
+        console.log(strAns);
+        // console.log(letterMost(strAns));
+        let houseDec = letterMost(strAns);
+        if (houseDec === 'g'){
             this.state.gryffindor.push(this.state.currentStudent);
             this.setState({gryffindor: this.state.gryffindor});
-        } else if (sum / 4 > 7 && sum / 4 <= 18) {
+        } else if (houseDec === 's') {
             this.state.slytherin.push(this.state.currentStudent);
             this.setState({slytherin: this.state.slytherin});
-        } else if (sum / 4 > 18 && sum / 4 <= 22) {
+        } else if (houseDec === 'h') {
             this.state.hufflepuff.push(this.state.currentStudent);
             this.setState({hufflepuff: this.state.hufflepuff});
-        } else if (sum / 4 > 22) {
+        } else if (houseDec === 'r') {
             this.state.ravenclaw.push(this.state.currentStudent);
             this.setState({ravenclaw: this.state.ravenclaw});
         }
 
-        this.setState({currentStudent: '', q1: '', q2: '', q3: '', q4: ''})
+        // this.setState({currentStudent: '', q1: '', q2: '', q3: '', q4: ''})
     }
 
     render() {
